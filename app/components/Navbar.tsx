@@ -1,8 +1,7 @@
 "use client";
 
 import { useCallback } from "react";
-
-const serif = "var(--font-newsreader), Georgia, serif";
+import Image from "next/image";
 
 const links = [
   { label: "Inicio", href: "inicio" },
@@ -42,9 +41,8 @@ export default function Navbar() {
 
   return (
     <nav className="cv-navbar">
-      <span style={{ fontFamily: serif, fontWeight: 700, fontSize: "17px", color: "#15171C" }}>
-        Ricardo Avila
-      </span>
+      <div className="cv-navbar-inner">
+      <Image src="/logo.png" alt="Ricardo Avila" height={24} width={72} style={{ objectFit: "contain", objectPosition: "left" }} />
       <div className="cv-nav-links">
         {links.map((link) => (
           <a
@@ -56,6 +54,7 @@ export default function Navbar() {
             {link.label}
           </a>
         ))}
+      </div>
       </div>
     </nav>
   );

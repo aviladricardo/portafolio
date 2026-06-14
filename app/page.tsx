@@ -1,4 +1,5 @@
 import Navbar from "./components/Navbar";
+import Image from "next/image";
 
 const mono = "var(--font-geist-mono), monospace";
 const serif = "var(--font-newsreader), Georgia, serif";
@@ -421,6 +422,26 @@ export default function Home() {
               ))}
             </div>
           </div>
+        </section>
+
+        {/* CIERRE */}
+        <section className="cv-cierre">
+          <Image
+            src="/cierre-desktop.png"
+            alt="Progress comes from balancing exploration + execution"
+            width={1200}
+            height={600}
+            className="cv-cierre-desktop"
+            style={{ width: "80%", height: "auto" }}
+          />
+          <Image
+            src="/cierre-mobile.png"
+            alt="Progress comes from balancing exploration + execution"
+            width={600}
+            height={600}
+            className="cv-cierre-mobile"
+            style={{ width: "100%", height: "auto" }}
+          />
         </section>
 
         {/* FOOTER */}
