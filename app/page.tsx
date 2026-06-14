@@ -1,3 +1,5 @@
+import Navbar from "./components/Navbar";
+
 const mono = "var(--font-geist-mono), monospace";
 const serif = "var(--font-newsreader), Georgia, serif";
 
@@ -24,152 +26,103 @@ const otros = [
 
 export default function Home() {
   return (
-    <div
-      style={{
-        minHeight: "100vh",
-        background: "#DEE0E5",
-        padding: "48px 24px",
-        display: "flex",
-        flexDirection: "column",
-        alignItems: "center",
-        gap: "28px",
-      }}
-    >
-      <div
-        style={{
-          width: "920px",
-          maxWidth: "100%",
-          backgroundColor: "#F6F5F1",
-          backgroundImage:
-            "radial-gradient(120% 68% at 100% 0%, rgba(42,71,196,0.09), transparent 55%), radial-gradient(circle, rgba(42,71,196,0.15) 1px, transparent 1.4px)",
-          backgroundSize: "auto, 22px 22px",
-          color: "#15171C",
-          boxShadow: "0 24px 60px -24px rgba(20,30,60,0.32)",
-          padding: "64px 72px 56px",
-        }}
-      >
-        {/* MASTHEAD */}
-        <header
-          style={{
-            display: "flex",
-            justifyContent: "space-between",
-            alignItems: "flex-end",
-            gap: "40px",
-            paddingBottom: "26px",
-            borderBottom: "1px solid #e2e1dc",
-          }}
-        >
-          <div>
+    <>
+      <Navbar />
+
+      {/* CONTENIDO */}
+      <div className="cv-container">
+
+        {/* HERO */}
+        <section id="inicio" style={{ paddingTop: "72px" }}>
+          {/* MASTHEAD */}
+          <header className="cv-masthead">
+            <div>
+<h1 className="cv-h1" style={{ fontFamily: serif }}>
+                Ricardo Avila
+              </h1>
+            </div>
             <div
+              className="cv-masthead-contact"
               style={{
                 fontFamily: mono,
-                fontSize: "11px",
-                letterSpacing: "0.32em",
-                textTransform: "uppercase",
-                color: "#2A47C4",
-                marginBottom: "16px",
+                fontSize: "12px",
+                color: "#6B6F76",
+                letterSpacing: "0.01em",
               }}
             >
-              Product · Innovación · Diseño estratégico
+              <span>linkedin.com/in/ravilade</span>
             </div>
-            <h1
-              style={{
-                fontFamily: serif,
-                fontWeight: 400,
-                fontSize: "60px",
-                lineHeight: 0.98,
-                letterSpacing: "-0.015em",
-                margin: 0,
-              }}
+          </header>
+
+          {/* LEAD */}
+          <p
+            className="cv-pretty"
+            style={{
+              fontFamily: serif,
+              fontWeight: 300,
+              fontSize: "21px",
+              lineHeight: 1.5,
+              color: "#33363d",
+              margin: "32px 0 0",
+              maxWidth: "74ch",
+            }}
+          >
+            Lidero estrategia de producto desde una mirada de{" "}
+            <em style={{ fontStyle: "italic", color: "#15171C" }}>
+              innovación centrada en las personas
+            </em>{" "}
+            con visión de negocio. Combino exploración anticipatoria con ejecución
+            end-to-end: identifico señales tempranas y construyo experimentos que
+            escalan a pilotos en producción.
+          </p>
+
+          {/* CTAs */}
+          <div className="cv-ctas">
+            <a
+              href="https://linkedin.com/in/ravilade"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="cv-btn cv-btn--primary"
             >
-              Ricardo Avila
-            </h1>
+              Contactar
+            </a>
+            <a href="#experiencia" className="cv-btn cv-btn--secondary">
+              Ver experiencia
+            </a>
           </div>
+
+          {/* ESPECIALIZACIONES */}
           <div
             style={{
               display: "flex",
-              flexDirection: "column",
-              alignItems: "flex-end",
-              gap: "5px",
+              flexWrap: "wrap",
+              alignItems: "center",
+              gap: "10px 16px",
+              marginTop: "32px",
               fontFamily: mono,
-              fontSize: "12px",
-              color: "#6B6F76",
-              letterSpacing: "0.01em",
-              textAlign: "right",
-              paddingBottom: "6px",
-              whiteSpace: "nowrap",
+              fontSize: "11px",
+              letterSpacing: "0.02em",
             }}
           >
-            <span>(+51) 936 025 637</span>
-            <span>ricardo.avila@pucp.pe</span>
-            <span>linkedin.com/in/ravilade</span>
+            <span>
+              <span style={{ color: "#15171C", fontWeight: 500 }}>Hyper Island</span>{" "}
+              <span style={{ color: "#888c93" }}>AI Acceleration Program</span>
+            </span>
+            <span style={{ color: "#c7c9cf" }}>·</span>
+            <span>
+              <span style={{ color: "#15171C", fontWeight: 500 }}>Empathy</span>{" "}
+              <span style={{ color: "#888c93" }}>Strategic Foresight</span>
+            </span>
+            <span style={{ color: "#c7c9cf" }}>·</span>
+            <span>
+              <span style={{ color: "#15171C", fontWeight: 500 }}>MIT</span>{" "}
+              <span style={{ color: "#888c93" }}>Innovation Leadership</span>
+            </span>
           </div>
-        </header>
-
-        {/* LEAD */}
-        <p
-          className="cv-pretty"
-          style={{
-            fontFamily: serif,
-            fontWeight: 300,
-            fontSize: "21px",
-            lineHeight: 1.5,
-            color: "#33363d",
-            margin: "32px 0 0",
-            maxWidth: "74ch",
-          }}
-        >
-          Lidero estrategia de producto desde una mirada de{" "}
-          <em style={{ fontStyle: "italic", color: "#15171C" }}>
-            innovación centrada en las personas
-          </em>{" "}
-          con visión de negocio. Combino exploración anticipatoria con ejecución
-          end-to-end: identifico señales tempranas y construyo experimentos que
-          escalan a pilotos en producción. Mi fluidez tecnológica abarca IA,
-          herramientas no-code y prototipado digital y físico para validar
-          rápido antes de escalar.
-        </p>
-
-        {/* ESPECIALIZACIONES */}
-        <div
-          style={{
-            display: "flex",
-            flexWrap: "wrap",
-            alignItems: "center",
-            gap: "10px 16px",
-            marginTop: "20px",
-            fontFamily: mono,
-            fontSize: "11px",
-            letterSpacing: "0.02em",
-          }}
-        >
-          <span>
-            <span style={{ color: "#15171C", fontWeight: 500 }}>Hyper Island</span>{" "}
-            <span style={{ color: "#888c93" }}>AI Acceleration Program</span>
-          </span>
-          <span style={{ color: "#c7c9cf" }}>·</span>
-          <span>
-            <span style={{ color: "#15171C", fontWeight: 500 }}>Empathy</span>{" "}
-            <span style={{ color: "#888c93" }}>Strategic Foresight</span>
-          </span>
-          <span style={{ color: "#c7c9cf" }}>·</span>
-          <span>
-            <span style={{ color: "#15171C", fontWeight: 500 }}>MIT</span>{" "}
-            <span style={{ color: "#888c93" }}>Innovation Leadership</span>
-          </span>
-        </div>
+        </section>
 
         {/* META: competencias + tech */}
-        <div
-          style={{
-            display: "grid",
-            gridTemplateColumns: "1fr 1fr",
-            gap: "40px",
-            marginTop: "40px",
-            paddingTop: "30px",
-            borderTop: "1px solid #e2e1dc",
-          }}
-        >
+        <div className="cv-meta-grid">
           <div>
             <div
               style={{
@@ -202,7 +155,7 @@ export default function Home() {
             </div>
           </div>
 
-          <div>
+          <div id="educacion">
             <div
               style={{
                 fontFamily: mono,
@@ -285,7 +238,7 @@ export default function Home() {
         </div>
 
         {/* EXPERIENCIA */}
-        <section style={{ marginTop: "44px" }}>
+        <section id="experiencia" style={{ marginTop: "44px" }}>
           <div className="cv-section-grid">
             <div>
               <div style={{ fontFamily: mono, fontSize: "11px", color: "#2A47C4", letterSpacing: "0.1em" }}>
@@ -454,7 +407,7 @@ export default function Home() {
                 Otros
               </h2>
             </div>
-            <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "14px 32px" }}>
+            <div className="cv-otros-grid">
               {otros.map((item) => (
                 <div key={item.title}>
                   <div style={{ fontSize: "15.5px", fontWeight: 500 }}>
@@ -475,6 +428,7 @@ export default function Home() {
           style={{
             marginTop: "44px",
             paddingTop: "16px",
+            paddingBottom: "48px",
             borderTop: "1px solid #e2e1dc",
             display: "flex",
             justifyContent: "space-between",
@@ -486,10 +440,10 @@ export default function Home() {
             color: "#9a9ca2",
           }}
         >
-          <span>Ricardo Avila · CV 2026</span>
+          <span>Ricardo Avila · 2026</span>
           <span>Lima, Perú</span>
         </footer>
       </div>
-    </div>
+    </>
   );
 }
