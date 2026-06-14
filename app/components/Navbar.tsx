@@ -2,7 +2,6 @@
 
 import { useCallback } from "react";
 const links = [
-  { label: "Inicio", href: "inicio" },
   { label: "Experiencia", href: "experiencia" },
   { label: "Educación", href: "educacion" },
 ];
@@ -40,7 +39,10 @@ export default function Navbar() {
   return (
     <nav className="cv-navbar">
       <div className="cv-navbar-inner">
-      <span style={{ fontFamily: "var(--font-newsreader), Georgia, serif", fontWeight: 700, fontSize: "17px", color: "#15171C" }}>
+      <span
+        onClick={() => smoothScrollTo(0)}
+        style={{ fontFamily: "var(--font-geist-mono), monospace", fontWeight: 600, fontSize: "13px", letterSpacing: "0.18em", textTransform: "uppercase", color: "#15171C", cursor: "pointer" }}
+      >
         Ric
       </span>
       <div className="cv-nav-links">
