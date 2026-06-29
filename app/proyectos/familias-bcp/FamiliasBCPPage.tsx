@@ -62,14 +62,7 @@ export default function FamiliasBCPPage() {
   return (
     <>
       <style>{`
-        @font-face {
-          font-family: 'Flexo';
-          src: url('/fonts/Flexo.ttf') format('truetype');
-          font-weight: 600 700;
-          font-style: normal;
-          font-display: swap;
-        }
-        .bcp-page *, .bcp-page *::before, .bcp-page *::after { box-sizing: border-box; }
+        .bcp-page *,.bcp-page *::before, .bcp-page *::after { box-sizing: border-box; }
         .bcp-page { font-family: var(--font-nunito, 'Nunito', sans-serif); background: #FDF9F4; color: #1A2240; -webkit-font-smoothing: antialiased; min-height: 100vh; }
         .bcp-reveal { opacity: 0; transform: translateY(30px); transition: opacity 0.7s ease, transform 0.7s ease; }
         .bcp-reveal.bcp-in { opacity: 1; transform: none; }
@@ -87,9 +80,10 @@ export default function FamiliasBCPPage() {
           .bcp-hero-desktop-only { display: none !important; }
           .bcp-hero-mobile-img-wrap { display: block; }
           .bcp-hero-wave { display: none !important; }
-          .bcp-hero-section { min-height: auto !important; }
+          .bcp-hero-section { min-height: 0 !important; height: calc(100vh - 64px); height: calc(100svh - 64px); }
           .bcp-hero-text { padding: 40px 0 28px !important; }
-          .bcp-hero-outer { padding-left: 20px !important; padding-right: 20px !important; align-items: flex-start !important; flex: 0 !important; }
+          .bcp-hero-outer { padding-left: 20px !important; padding-right: 20px !important; align-items: flex-start !important; flex: 0 0 auto !important; }
+          .bcp-hero-mobile-img-wrap { flex: 1; min-height: 0; overflow: hidden; }
           .bcp-h1-hero { font-size: 30px !important; line-height: 1.22 !important; }
           .bcp-steps-row { flex-direction: column !important; align-items: center !important; gap: 32px !important; }
           .bcp-step-item { width: 100% !important; max-width: 320px !important; }
@@ -164,7 +158,7 @@ export default function FamiliasBCPPage() {
           {/* Mobile image */}
           <div className="bcp-hero-mobile-img-wrap" style={{ width: "100%", lineHeight: 0 }}>
             {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src="/hero_mobile.png" alt="" style={{ display: "block", width: "100%" }} />
+            <img src="/hero_mobile.png" alt="" style={{ display: "block", width: "100%", height: "100%", objectFit: "cover", objectPosition: "center bottom" }} />
           </div>
 
           <div className="bcp-hero-wave" style={{ overflow: "hidden", height: 58, position: "relative", zIndex: 3, marginTop: -1 }}>

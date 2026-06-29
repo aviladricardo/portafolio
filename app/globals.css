@@ -227,6 +227,14 @@ body {
 }
 
 
+@font-face {
+  font-family: 'Flexo';
+  src: url('/fonts/Flexo.ttf') format('truetype');
+  font-weight: 600 700;
+  font-style: normal;
+  font-display: swap;
+}
+
 /* Flexo artificial bold — use on card titles & internal subtitles */
 .flexo-heavy {
   -webkit-text-stroke: 0.45px currentColor;

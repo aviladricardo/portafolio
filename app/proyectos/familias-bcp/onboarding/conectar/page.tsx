@@ -27,7 +27,6 @@ export default function ConectarPage() {
   return (
     <>
       <style>{`
-        @font-face { font-family: 'Flexo'; src: url('/fonts/Flexo.ttf') format('truetype'); font-weight: 600 700; font-style: normal; font-display: swap; }
         body, html { background: white !important; background-image: none !important; }
         .bcp-bg { display: none; }
         @media (min-width: 768px) {

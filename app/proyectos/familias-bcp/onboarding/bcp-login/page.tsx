@@ -68,7 +68,6 @@ function BcpLoginContent() {
   return (
     <>
       <style>{`
-        @font-face { font-family: 'Flexo'; src: url('/fonts/Flexo.ttf') format('truetype'); font-weight: 600 700; font-style: normal; font-display: swap; }
         body { background: #001A60 !important; background-image: none !important; }
         @keyframes bcp-fade-in { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: none; } }
         .bcp-check-item { animation: bcp-fade-in 0.3s ease forwards; }

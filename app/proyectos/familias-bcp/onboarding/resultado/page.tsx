@@ -377,7 +377,6 @@ function ResultadoContent() {
   return (
     <>
       <style>{`
-        @font-face { font-family: 'Flexo'; src: url('/fonts/Flexo.ttf') format('truetype'); font-weight: 600 700; font-style: normal; font-display: swap; }
         body { background: #001A60 !important; background-image: none !important; }
         .bcp-sidebar-item { display: flex; align-items: center; gap: 12px; padding: 11px 16px; border-radius: 12px; cursor: pointer; color: rgba(255,255,255,0.55); font-size: 14px; font-weight: 500; transition: background 0.15s, color 0.15s; }
         .bcp-sidebar-item:hover { background: rgba(255,255,255,0.08); color: white; }
@@ -402,6 +401,9 @@ function ResultadoContent() {
         @media (max-width: 767px) {
           .bcp-sidebar { display: none; }
           .bcp-grid { grid-template-columns: 1fr; }
+          .bcp-dash-header { padding: 20px 20px 24px !important; }
+          .bcp-dash-header h1 { font-size: 26px !important; }
+          .bcp-dash-content { padding: 16px 16px 32px !important; }
         }
 .bcp-slider-thumb { pointer-events: none; }
         .bcp-slider-thumb::-webkit-slider-thumb { -webkit-appearance: none; appearance: none; width: 22px; height: 22px; border-radius: 50%; background: white; border: 2.5px solid #003DA5; box-shadow: 0 2px 6px rgba(0,61,165,0.22); pointer-events: all; cursor: grab; }
@@ -454,7 +456,7 @@ function ResultadoContent() {
           </div>
 
           {/* Top header */}
-          <div style={{ background: "#001A60", padding: "36px 48px 32px" }}>
+          <div className="bcp-dash-header" style={{ background: "#001A60", padding: "36px 48px 32px" }}>
             <p style={{ fontSize: 11, fontWeight: 700, letterSpacing: "2px", color: "rgba(168,194,236,0.6)", marginBottom: 8 }}>MI NEGOCIO</p>
             {verified ? (
               <div>
@@ -479,7 +481,7 @@ function ResultadoContent() {
           </div>
 
           {/* Content */}
-          <div style={{ flex: 1, background: "#F0F2F8", padding: "28px 48px 40px" }}>
+          <div className="bcp-dash-content" style={{ flex: 1, background: "#F0F2F8", padding: "28px 48px 40px" }}>
             <div className="bcp-grid" style={{ display: "grid", gap: 20, marginBottom: 20 }}>
 
               {/* Business profile card */}

@@ -114,13 +114,6 @@ export default function OnboardingStep() {
   return (
     <>
       <style>{`
-        @font-face {
-          font-family: 'Flexo';
-          src: url('/fonts/Flexo.ttf') format('truetype');
-          font-weight: 600 700;
-          font-style: normal;
-          font-display: swap;
-        }
         body { background: white !important; background-image: none !important; }
         @media (min-width: 768px) {
           body { background: #0D1535 !important; }
