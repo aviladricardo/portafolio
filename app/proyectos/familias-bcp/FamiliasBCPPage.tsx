@@ -82,10 +82,17 @@ export default function FamiliasBCPPage() {
         .bcp-nav-cta:hover { background: #D96C10 !important; box-shadow: 0 6px 22px rgba(240,123,31,0.55) !important; }
         .bcp-hero-cta:hover { background: #D96C10 !important; transform: translateY(-2px); box-shadow: 0 14px 40px rgba(240,123,31,0.56) !important; }
         .bcp-final-cta:hover { background: #D96C10 !important; transform: translateY(-3px); box-shadow: 0 18px 50px rgba(240,123,31,0.52) !important; }
+        .bcp-hero-mobile-img-wrap { display: none; }
         @media (max-width: 860px) {
-          .bcp-hero-text { padding: 52px 22px 32px !important; }
+          .bcp-hero-desktop-only { display: none !important; }
+          .bcp-hero-mobile-img-wrap { display: block; }
+          .bcp-hero-wave { display: none !important; }
+          .bcp-hero-section { min-height: auto !important; }
+          .bcp-hero-text { padding: 40px 0 28px !important; }
+          .bcp-hero-outer { padding-left: 20px !important; padding-right: 20px !important; align-items: flex-start !important; flex: 0 !important; }
           .bcp-h1-hero { font-size: 30px !important; line-height: 1.22 !important; }
-          .bcp-steps-row { flex-direction: column !important; }
+          .bcp-steps-row { flex-direction: column !important; align-items: center !important; gap: 32px !important; }
+          .bcp-step-item { width: 100% !important; max-width: 320px !important; }
           .bcp-step-arrow { display: none !important; }
           .bcp-benefits-grid { grid-template-columns: 1fr !important; }
           .bcp-trust-grid { grid-template-columns: 1fr !important; gap: 40px !important; }
@@ -115,13 +122,13 @@ export default function FamiliasBCPPage() {
         </nav>
 
         {/* HERO */}
-        <section style={{ position: "relative", overflow: "hidden", minHeight: "92vh", display: "flex", flexDirection: "column" }}>
-          <Image src="/banner_desktop.png" alt="" fill style={{ objectFit: "cover", objectPosition: "center" }} priority />
-          <div aria-hidden="true" style={{ position: "absolute", inset: 0, background: "#001A60", zIndex: 1, opacity: 0.45 }} />
-          <div aria-hidden="true" style={{ position: "absolute", inset: 0, zIndex: 2, background: "linear-gradient(100deg, rgba(0,26,96,0.97) 0%, rgba(0,26,96,0.93) 38%, rgba(0,26,96,0.72) 58%, rgba(0,26,96,0.18) 78%, rgba(0,26,96,0.04) 100%)" }} />
-          <div aria-hidden="true" style={{ position: "absolute", bottom: 0, left: 0, right: 0, height: 200, zIndex: 2, background: "linear-gradient(to top,rgba(0,26,96,0.55) 0%,transparent 100%)" }} />
+        <section className="bcp-hero-section" style={{ position: "relative", overflow: "hidden", minHeight: "92vh", display: "flex", flexDirection: "column", background: "#001A60" }}>
+          <Image className="bcp-hero-desktop-only" src="/hero_desktop.png" alt="" fill style={{ objectFit: "cover", objectPosition: "center" }} priority />
+          <div className="bcp-hero-desktop-only" aria-hidden="true" style={{ position: "absolute", inset: 0, background: "#001A60", zIndex: 1, opacity: 0.45 }} />
+          <div className="bcp-hero-desktop-only" aria-hidden="true" style={{ position: "absolute", inset: 0, zIndex: 2, background: "linear-gradient(100deg, rgba(0,26,96,0.97) 0%, rgba(0,26,96,0.93) 38%, rgba(0,26,96,0.72) 58%, rgba(0,26,96,0.18) 78%, rgba(0,26,96,0.04) 100%)" }} />
+          <div className="bcp-hero-desktop-only" aria-hidden="true" style={{ position: "absolute", bottom: 0, left: 0, right: 0, height: 200, zIndex: 2, background: "linear-gradient(to top,rgba(0,26,96,0.55) 0%,transparent 100%)" }} />
 
-          <div style={{ position: "relative", zIndex: 3, flex: 1, display: "flex", alignItems: "center", maxWidth: 1120, width: "100%", margin: "0 auto", padding: "0 28px" }}>
+          <div className="bcp-hero-outer" style={{ position: "relative", zIndex: 3, flex: 1, display: "flex", alignItems: "center", maxWidth: 1120, width: "100%", margin: "0 auto", padding: "0 28px" }}>
             <div className="bcp-hero-text" style={{ padding: "100px 0 80px", maxWidth: 580 }}>
               <h1 className="bcp-h1-hero" style={{ fontFamily: "'Flexo', sans-serif", fontSize: 54, fontWeight: 700, color: "#FFFFFF", lineHeight: 1.16, marginBottom: 22 }}>
                 Ayúdalos a crecer<br />lo que <span style={{ color: "#F9B370", fontStyle: "normal", fontWeight: 600 }}>construyeron para ti.</span>
@@ -154,7 +161,13 @@ export default function FamiliasBCPPage() {
             </div>
           </div>
 
-          <div style={{ overflow: "hidden", height: 58, position: "relative", zIndex: 3, marginTop: -1 }}>
+          {/* Mobile image */}
+          <div className="bcp-hero-mobile-img-wrap" style={{ width: "100%", lineHeight: 0 }}>
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img src="/hero_mobile.png" alt="" style={{ display: "block", width: "100%" }} />
+          </div>
+
+          <div className="bcp-hero-wave" style={{ overflow: "hidden", height: 58, position: "relative", zIndex: 3, marginTop: -1 }}>
             <svg viewBox="0 0 1440 58" preserveAspectRatio="none" style={{ display: "block", width: "100%", height: 58 }} xmlns="http://www.w3.org/2000/svg">
               <path d="M0 32 Q360 60 720 28 Q1080 0 1440 38 L1440 58 L0 58 Z" fill="#FDF9F4" />
             </svg>
@@ -200,7 +213,7 @@ export default function FamiliasBCPPage() {
                 },
               ].map((step, i) => (
                 <Fragment key={step.title}>
-                  <div style={{ flex: 1, display: "flex", flexDirection: "column", alignItems: "center", textAlign: "center", gap: 12, padding: "0 16px" }}>
+                  <div className="bcp-step-item" style={{ flex: 1, display: "flex", flexDirection: "column", alignItems: "center", textAlign: "center", gap: 12, padding: "0 16px" }}>
                     <div style={{ width: 46, height: 46, borderRadius: 13, background: "#EEF4FF", border: "1px solid rgba(0,61,165,0.1)", display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0 }}>
                       {step.icon}
                     </div>
@@ -236,7 +249,7 @@ export default function FamiliasBCPPage() {
                   </div>
                   <span style={{ fontFamily: "var(--font-nunito, 'Nunito', sans-serif)", fontSize: 11, fontWeight: 800, letterSpacing: "2.2px", textTransform: "uppercase", color: "#003DA5" }}>Configuras</span>
                 </div>
-                <p style={{ fontFamily: "'Flexo', sans-serif", fontSize: 19, fontWeight: 700, color: "#1A2240", lineHeight: 1.35, marginBottom: 12 }}>El familiar arma su negocio solo, en minutos.</p>
+                <p className="flexo-heavy" style={{ fontFamily: "'Flexo', sans-serif", fontSize: 19, fontWeight: 700, color: "#1A2240", lineHeight: 1.35, marginBottom: 12 }}>El familiar arma su negocio solo, en minutos.</p>
                 <p style={{ fontFamily: "var(--font-nunito, 'Nunito', sans-serif)", fontSize: 14, color: "#7A8EAE", lineHeight: 1.6 }}>Sin papeleos, sin asesor.</p>
               </div>
 
@@ -247,7 +260,7 @@ export default function FamiliasBCPPage() {
                   </div>
                   <span style={{ fontFamily: "var(--font-nunito, 'Nunito', sans-serif)", fontSize: 11, fontWeight: 800, letterSpacing: "2.2px", textTransform: "uppercase", color: "#003DA5" }}>Entiendes</span>
                 </div>
-                <p style={{ fontFamily: "'Flexo', sans-serif", fontSize: 19, fontWeight: 700, color: "#1A2240", lineHeight: 1.35, marginBottom: 12 }}>Ve sus números claros por primera vez.</p>
+                <p className="flexo-heavy" style={{ fontFamily: "'Flexo', sans-serif", fontSize: 19, fontWeight: 700, color: "#1A2240", lineHeight: 1.35, marginBottom: 12 }}>Ve sus números claros por primera vez.</p>
                 <p style={{ fontFamily: "var(--font-nunito, 'Nunito', sans-serif)", fontSize: 14, color: "#7A8EAE", lineHeight: 1.6 }}>Ingresos, gastos, tendencias.</p>
               </div>
 
@@ -258,7 +271,7 @@ export default function FamiliasBCPPage() {
                   </div>
                   <span style={{ fontFamily: "var(--font-nunito, 'Nunito', sans-serif)", fontSize: 11, fontWeight: 800, letterSpacing: "2.2px", textTransform: "uppercase", color: "#F07B1F" }}>Creces</span>
                 </div>
-                <p style={{ fontFamily: "'Flexo', sans-serif", fontSize: 19, fontWeight: 700, color: "#1A2240", lineHeight: 1.35, marginBottom: 16 }}>Desbloquean metas reales juntos.</p>
+                <p className="flexo-heavy" style={{ fontFamily: "'Flexo', sans-serif", fontSize: 19, fontWeight: 700, color: "#1A2240", lineHeight: 1.35, marginBottom: 16 }}>Desbloquean metas reales juntos.</p>
                 <div style={{ display: "flex", flexDirection: "column", gap: 9 }}>
                   {[
                     { label: "Primera cuenta activa", orange: false },
@@ -299,7 +312,7 @@ export default function FamiliasBCPPage() {
                   <div style={{ width: 46, height: 46, borderRadius: 12, background: "rgba(240,123,31,0.2)", border: "1px solid rgba(240,123,31,0.32)", display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0 }}>
                     <svg width="22" height="22" viewBox="0 0 22 22" fill="none" aria-hidden="true"><path d="M11 3.5L3.5 9.5V19h5v-5h5v5h5V9.5L11 3.5z" stroke="#F9B370" strokeWidth="1.5" strokeLinejoin="round" fill="none" /></svg>
                   </div>
-                  <h3 style={{ fontFamily: "'Flexo', sans-serif", fontSize: 22, fontWeight: 700, color: "white" }}>Para tus padres con negocio</h3>
+                  <h3 className="flexo-heavy" style={{ fontFamily: "'Flexo', sans-serif", fontSize: 22, fontWeight: 700, color: "white" }}>Para tus padres con negocio</h3>
                 </div>
                 <ul style={{ listStyle: "none", display: "flex", flexDirection: "column", gap: 20, position: "relative", zIndex: 1, margin: 0, padding: 0 }}>
                   {[
@@ -325,7 +338,7 @@ export default function FamiliasBCPPage() {
                   <div style={{ width: 46, height: 46, borderRadius: 12, background: "#EEF4FF", border: "1px solid rgba(0,61,165,0.14)", display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0 }}>
                     <svg width="22" height="22" viewBox="0 0 22 22" fill="none" aria-hidden="true"><path d="M11 19C11 19 3 13.5 3 7.8 3 5.7 4.8 4 7 4c1.4 0 2.7.8 4 2.2C12.3 4.8 13.6 4 15 4c2.2 0 4 1.7 4 3.8C19 13.5 11 19 11 19z" stroke="#003DA5" strokeWidth="1.5" strokeLinejoin="round" fill="none" /></svg>
                   </div>
-                  <h3 style={{ fontFamily: "'Flexo', sans-serif", fontSize: 22, fontWeight: 700, color: "#1A2240" }}>Para ti</h3>
+                  <h3 className="flexo-heavy" style={{ fontFamily: "'Flexo', sans-serif", fontSize: 22, fontWeight: 700, color: "#1A2240" }}>Para ti</h3>
                 </div>
                 <ul style={{ listStyle: "none", display: "flex", flexDirection: "column", gap: 20, position: "relative", zIndex: 1, margin: 0, padding: 0 }}>
                   {[
@@ -443,8 +456,8 @@ export default function FamiliasBCPPage() {
               style={{ position: "absolute", top: 16, right: 16, width: 34, height: 34, borderRadius: "50%", background: "#F0F2F7", border: "none", cursor: "pointer", display: "flex", alignItems: "center", justifyContent: "center", color: "#5A6A92", fontSize: 16, fontWeight: 600 }}
             >×</button>
 
-            <h3 style={{ fontFamily: "'Flexo', sans-serif", fontSize: 24, fontWeight: 700, color: "#1A2240", lineHeight: 1.3, marginBottom: 28 }}>
-              ¿A quién le estamos ayudando?
+            <h3 className="flexo-heavy" style={{ fontFamily: "'Flexo', sans-serif", fontSize: 24, fontWeight: 700, color: "#1A2240", lineHeight: 1.3, marginBottom: 28 }}>
+              Empieza gratis ahora
             </h3>
 
             <form onSubmit={handleFormSubmit} style={{ display: "flex", flexDirection: "column", gap: 20 }}>

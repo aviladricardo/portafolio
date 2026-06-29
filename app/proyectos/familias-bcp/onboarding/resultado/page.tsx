@@ -498,7 +498,7 @@ function ResultadoContent() {
                     </span>
                   )}
                 </div>
-                <p style={{ fontFamily: "'Flexo',sans-serif", fontSize: 17, fontWeight: 700, color: "#1A2240", marginBottom: 10 }}>
+                <p className="flexo-heavy" style={{ fontFamily: "'Flexo',sans-serif", fontSize: 17, fontWeight: 700, color: "#1A2240", marginBottom: 10 }}>
                   {verified ? businessName : profile.label}
                 </p>
                 {verified && (
@@ -533,7 +533,7 @@ function ResultadoContent() {
               {/* Reference numbers card */}
               <div style={{ background: "white", borderRadius: 20, padding: "24px", boxShadow: "0 1px 8px rgba(0,26,96,0.07)", position: "relative", overflow: "hidden" }}>
                 <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", marginBottom: 14 }}>
-                  <p style={{ fontFamily: "'Flexo',sans-serif", fontSize: 16, fontWeight: 700, color: "#1A2240" }}>Números típicos del sector</p>
+                  <p className="flexo-heavy" style={{ fontFamily: "'Flexo',sans-serif", fontSize: 16, fontWeight: 700, color: "#1A2240" }}>Números típicos del sector</p>
                   <span style={{ display: "inline-flex", alignItems: "center", gap: 5, fontSize: 11.5, fontWeight: 700, color: "#B45309", background: "#FEF3C7", borderRadius: 20, padding: "4px 10px", flexShrink: 0 }}>
                     <span style={{ width: 6, height: 6, borderRadius: "50%", background: "#F59E0B", flexShrink: 0 }} />
                     Pendiente completar
@@ -639,7 +639,7 @@ function ResultadoContent() {
                   <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", marginBottom: 12 }}>
                     <div>
                       <p style={{ fontSize: 10, fontWeight: 700, letterSpacing: "1.5px", color: "#F07B1F", marginBottom: 6 }}>OPORTUNIDAD IDENTIFICADA</p>
-                      <p style={{ fontFamily: "'Flexo',sans-serif", fontSize: 17, fontWeight: 700, color: "#1A2240", marginBottom: 4 }}>Podrías generar hasta</p>
+                      <p className="flexo-heavy" style={{ fontFamily: "'Flexo',sans-serif", fontSize: 17, fontWeight: 700, color: "#1A2240", marginBottom: 4 }}>Podrías generar hasta</p>
                       <p style={{ fontFamily: "'Flexo',sans-serif", fontSize: 28, fontWeight: 700, color: "#F07B1F" }}>{`S/ ${uplift.toLocaleString("es-PE")} más`}</p>
                     </div>
                     <div style={{ background: "#FFF0E0", borderRadius: 12, padding: "8px 14px", textAlign: "center" }}>
@@ -669,7 +669,7 @@ function ResultadoContent() {
               <div style={{ position: "relative", borderRadius: 20, overflow: "hidden", boxShadow: "0 1px 8px rgba(0,26,96,0.07)" }}>
                 <div style={{ background: "white", padding: "24px", cursor: savedValues ? "pointer" : "default", filter: savedValues ? "none" : "blur(4px)", userSelect: savedValues ? "auto" : "none", pointerEvents: savedValues ? "auto" : "none" }} onClick={() => savedValues && setConectarOpen(true)}>
                   <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", marginBottom: 6 }}>
-                    <p style={{ fontFamily: "'Flexo',sans-serif", fontSize: 17, fontWeight: 700, color: "#1A2240" }}>Registrar ingresos diarios</p>
+                    <p className="flexo-heavy" style={{ fontFamily: "'Flexo',sans-serif", fontSize: 17, fontWeight: 700, color: "#1A2240" }}>Registrar ingresos diarios</p>
                     <div style={{ width: 40, height: 40, borderRadius: 12, background: "#EEF4FF", display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0 }}>
                       <svg width="20" height="20" viewBox="0 0 22 22" fill="none"><rect x="3" y="5" width="16" height="13" rx="2" stroke="#003DA5" strokeWidth="1.5"/><path d="M7 9h8M7 13h5" stroke="#003DA5" strokeWidth="1.5" strokeLinecap="round"/><path d="M7 2v4M15 2v4" stroke="#003DA5" strokeWidth="1.3" strokeLinecap="round" opacity=".5"/></svg>
                     </div>
@@ -697,7 +697,7 @@ function ResultadoContent() {
                 <div style={{ padding: "20px 24px 24px" }}>
                   <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", marginBottom: 16 }}>
                     <div>
-                      <p style={{ fontFamily: "'Flexo',sans-serif", fontSize: 16, fontWeight: 700, color: "#1A2240", marginBottom: 2 }}>Movimientos</p>
+                      <p className="flexo-heavy" style={{ fontFamily: "'Flexo',sans-serif", fontSize: 16, fontWeight: 700, color: "#1A2240", marginBottom: 2 }}>Movimientos</p>
                       <p style={{ fontSize: 12, color: "#9AAABF" }}>
                         Últimos 6 meses ·{" "}
                         <span style={{ color: txProgress < 100 ? "#F07B1F" : "#059669", fontWeight: 600 }}>
@@ -765,7 +765,7 @@ function ResultadoContent() {
                               <span style={{ fontSize: 26 }}>📱</span>
                             </div>
                             <p style={{ fontSize: 11, fontWeight: 700, letterSpacing: "1.4px", color: "#9AAABF", marginBottom: 6 }}>HISTORIAL COMPLETO</p>
-                            <h3 style={{ fontFamily: "'Flexo',sans-serif", fontSize: 22, fontWeight: 700, color: "#1A2240", marginBottom: 8, lineHeight: 1.3 }}>
+                            <h3 className="flexo-heavy" style={{ fontFamily: "'Flexo',sans-serif", fontSize: 22, fontWeight: 700, color: "#1A2240", marginBottom: 8, lineHeight: 1.3 }}>
                               Accede a los {TRANSACTIONS.length} movimientos
                             </h3>
                             <p style={{ fontSize: 14, color: "#9AAABF", lineHeight: 1.6, marginBottom: 24 }}>
@@ -853,7 +853,7 @@ function ResultadoContent() {
             <div style={{ position: "relative", borderRadius: 20, overflow: "hidden", boxShadow: "0 1px 8px rgba(0,26,96,0.07)" }}>
               <div aria-hidden style={{ background: "white", padding: "22px 24px 80px", display: "flex", alignItems: "flex-start", gap: 16, filter: "blur(4px)", userSelect: "none", pointerEvents: "none" }}>
                 <div style={{ flex: 1 }}>
-                  <p style={{ fontFamily: "'Flexo',sans-serif", fontSize: 16, fontWeight: 700, color: "#1A2240", marginBottom: 5 }}>La salud del negocio</p>
+                  <p className="flexo-heavy" style={{ fontFamily: "'Flexo',sans-serif", fontSize: 16, fontWeight: 700, color: "#1A2240", marginBottom: 5 }}>La salud del negocio</p>
                   <p style={{ fontSize: 13, color: "#7A8EAE", lineHeight: 1.5 }}>Conoce tus gastos fijos y variables para saber si el negocio es saludable</p>
                 </div>
                 <div style={{ width: 44, height: 44, borderRadius: 13, background: "#EEF4FF", flexShrink: 0 }} />
@@ -861,7 +861,7 @@ function ResultadoContent() {
               <div style={{ position: "absolute", inset: 0, background: "rgba(255,255,255,0.86)", backdropFilter: "blur(2px)", display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", gap: 8, padding: "24px" }}>
                 <div style={{ display: "flex", alignItems: "center", gap: 8 }}>
                   <svg width="14" height="16" viewBox="0 0 14 16" fill="none"><rect x="1" y="7" width="12" height="8.5" rx="2.5" stroke="#F07B1F" strokeWidth="1.5"/><path d="M4 7V4.5a3 3 0 016 0V7" stroke="#F07B1F" strokeWidth="1.5" strokeLinecap="round"/><circle cx="7" cy="11" r="1.2" fill="#F07B1F"/></svg>
-                  <p style={{ fontFamily: "'Flexo',sans-serif", fontSize: 15, fontWeight: 700, color: "#1A2240" }}>La salud del negocio</p>
+                  <p className="flexo-heavy" style={{ fontFamily: "'Flexo',sans-serif", fontSize: 15, fontWeight: 700, color: "#1A2240" }}>La salud del negocio</p>
                 </div>
                 <p style={{ fontSize: 12.5, color: "#9AAABF", textAlign: "center", lineHeight: 1.55, maxWidth: 280 }}>Registra tus primeros ingresos para desbloquear este análisis</p>
                 <button onClick={() => setConectarOpen(true)} style={{ marginTop: 4, background: "#F07B1F", color: "white", border: "none", borderRadius: 10, padding: "11px 28px", fontFamily: "var(--font-nunito,'Nunito',sans-serif)", fontSize: 13.5, fontWeight: 800, cursor: "pointer" }}>

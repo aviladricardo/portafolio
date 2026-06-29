@@ -227,6 +227,12 @@ body {
 }
 
 
+/* Flexo artificial bold — use on card titles & internal subtitles */
+.flexo-heavy {
+  -webkit-text-stroke: 0.45px currentColor;
+  text-stroke: 0.45px currentColor;
+}
+
 @media print {
   body { background: #F6F5F1; }
   .cv-navbar { display: none; }
