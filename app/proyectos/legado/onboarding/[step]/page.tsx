@@ -87,7 +87,7 @@ export default function OnboardingStep() {
   }, [step]);
 
   if (!config) {
-    router.replace("/proyectos/familias-bcp");
+    router.replace("/proyectos/legado");
     return null;
   }
 
@@ -97,17 +97,17 @@ export default function OnboardingStep() {
     if (!selected) return;
     saveAnswer(step, selected);
     if (step < TOTAL_STEPS) {
-      router.push(`/proyectos/familias-bcp/onboarding/${step + 1}`);
+      router.push(`/proyectos/legado/onboarding/${step + 1}`);
     } else {
-      router.push("/proyectos/familias-bcp/onboarding/cargando");
+      router.push("/proyectos/legado/onboarding/cargando");
     }
   };
 
   const handleBack = () => {
     if (step > 1) {
-      router.push(`/proyectos/familias-bcp/onboarding/${step - 1}`);
+      router.push(`/proyectos/legado/onboarding/${step - 1}`);
     } else {
-      router.push("/proyectos/familias-bcp");
+      router.push("/proyectos/legado");
     }
   };
 

@@ -123,7 +123,7 @@ export default function ConectarPage() {
             </svg>
             <span style={{ fontSize: 12.5, color: "#9AAABF" }}>Solo tú decides qué compartes. Nadie más tiene acceso.</span>
           </div>
-          <button disabled={selected.size === 0} onClick={() => router.push("/proyectos/familias-bcp/onboarding/espejo")} style={{ width: "100%", background: "#F07B1F", color: "white", border: "none", borderRadius: 16, padding: "18px 24px", fontSize: 17, fontWeight: 800, cursor: selected.size > 0 ? "pointer" : "default", opacity: selected.size > 0 ? 1 : 0.4, transition: "opacity 0.2s", fontFamily: "var(--font-nunito, 'Nunito', sans-serif)", boxShadow: "0 8px 24px rgba(240,123,31,0.28)" }}>
+          <button disabled={selected.size === 0} onClick={() => router.push("/proyectos/legado/onboarding/espejo")} style={{ width: "100%", background: "#F07B1F", color: "white", border: "none", borderRadius: 16, padding: "18px 24px", fontSize: 17, fontWeight: 800, cursor: selected.size > 0 ? "pointer" : "default", opacity: selected.size > 0 ? 1 : 0.4, transition: "opacity 0.2s", fontFamily: "var(--font-nunito, 'Nunito', sans-serif)", boxShadow: "0 8px 24px rgba(240,123,31,0.28)" }}>
             Conectar y analizar
           </button>
           <p style={{ textAlign: "center", fontSize: 12, color: "#C8D2E6", marginTop: 12 }}>

@@ -18,7 +18,7 @@ export default function CargandoPage() {
       setTimeout(() => setChecked(1), 900),
       setTimeout(() => setChecked(2), 1900),
       setTimeout(() => setChecked(3), 2900),
-      setTimeout(() => router.push("/proyectos/familias-bcp/onboarding/resultado"), 3600),
+      setTimeout(() => router.push("/proyectos/legado/onboarding/resultado"), 3600),
     ];
     return () => timers.forEach(clearTimeout);
   }, [router]);
@@ -55,7 +55,7 @@ export default function CargandoPage() {
           <div style={{ background: "rgba(255,255,255,0.12)", border: "1.5px solid rgba(255,255,255,0.2)", borderRadius: 16, padding: "12px 28px" }}>
             <span style={{ fontFamily: "'Flexo', sans-serif", fontSize: 28, fontWeight: 700, color: "white", letterSpacing: "3px" }}>BCP</span>
           </div>
-          <span style={{ fontFamily: "'Flexo', sans-serif", fontSize: 17, fontWeight: 600, color: "rgba(255,255,255,0.75)", letterSpacing: "0.3px" }}>Mi Familia</span>
+          <span style={{ fontFamily: "'Flexo', sans-serif", fontSize: 17, fontWeight: 600, color: "rgba(255,255,255,0.75)", letterSpacing: "0.3px" }}>Legado</span>
         </div>
 
         {/* Spinner */}

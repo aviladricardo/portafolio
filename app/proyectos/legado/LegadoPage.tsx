@@ -38,7 +38,7 @@ export default function FamiliasBCPPage() {
     if (!formData.nombre || !formData.email || !formData.telefono) return;
     sessionStorage.setItem("bcp_lead", JSON.stringify(formData));
     setModalOpen(false);
-    router.push("/proyectos/familias-bcp/onboarding/1");
+    router.push("/proyectos/legado/onboarding/1");
   };
 
   useEffect(() => {
@@ -109,7 +109,7 @@ export default function FamiliasBCPPage() {
           <div style={{ maxWidth: 1120, margin: "0 auto", padding: "0 24px", height: 64, display: "flex", alignItems: "center", justifyContent: "space-between", gap: 16 }}>
             <div style={{ display: "flex", alignItems: "center", gap: 10, flexShrink: 0 }}>
               <div style={{ background: "#003DA5", border: "1.5px solid rgba(255,255,255,0.25)", color: "white", fontFamily: "'Flexo', sans-serif", fontWeight: 700, fontSize: 12, padding: "5px 9px", borderRadius: 5, letterSpacing: "1.2px", lineHeight: 1 }}>BCP</div>
-              <span style={{ color: "white", fontFamily: "'Flexo', sans-serif", fontSize: 17, fontWeight: 600, letterSpacing: "0.2px" }}>Mi Familia</span>
+              <span style={{ color: "white", fontFamily: "'Flexo', sans-serif", fontSize: 17, fontWeight: 600, letterSpacing: "0.2px" }}>Legado</span>
             </div>
             <a href="#" onClick={openModal} className="bcp-nav-cta" style={{ background: "#F07B1F", color: "white", fontFamily: "var(--font-nunito, 'Nunito', sans-serif)", fontSize: 14, fontWeight: 700, padding: "10px 22px", borderRadius: 8, textDecoration: "none", letterSpacing: "0.3px", boxShadow: "0 4px 14px rgba(240,123,31,0.38)", transition: "background 0.2s, box-shadow 0.2s" }}>Empieza gratis</a>
           </div>
@@ -129,7 +129,7 @@ export default function FamiliasBCPPage() {
               </h1>
 
               <p style={{ fontSize: 18, color: "rgba(200,218,248,0.92)", lineHeight: 1.74, marginBottom: 40, maxWidth: 440, fontFamily: "var(--font-nunito, 'Nunito', sans-serif)" }}>
-                Con Familias BCP podrás entender mejor el negocio familiar y acompañarlos a crecer, a su ritmo.
+                Con Legado BCP podrás entender mejor el negocio familiar y acompañarlos a crecer, a su ritmo.
               </p>
 
               <div style={{ display: "flex", alignItems: "center", flexWrap: "wrap", gap: 16, marginBottom: 44 }}>
@@ -171,7 +171,7 @@ export default function FamiliasBCPPage() {
         {/* SECCIÓN 2: EL CAMBIO */}
         <section style={{ background: "#FDF9F4", padding: "90px 24px" }}>
           <div style={{ maxWidth: 720, margin: "0 auto" }}>
-            <p className="bcp-reveal" style={{ fontFamily: "var(--font-nunito, 'Nunito', sans-serif)", fontSize: 11.5, fontWeight: 700, letterSpacing: "2.8px", textTransform: "uppercase", color: "#F07B1F", marginBottom: 16 }}>Lo que cambia con Mi Familia</p>
+            <p className="bcp-reveal" style={{ fontFamily: "var(--font-nunito, 'Nunito', sans-serif)", fontSize: 11.5, fontWeight: 700, letterSpacing: "2.8px", textTransform: "uppercase", color: "#F07B1F", marginBottom: 16 }}>Lo que cambia con Legado</p>
 
             <h2 className="bcp-s-h2 bcp-reveal d1" style={{ fontFamily: "'Flexo', sans-serif", fontSize: 36, fontWeight: 700, color: "#1A2240", lineHeight: 1.28, marginBottom: 28 }}>
               ¿Cuándo fue la última vez<br />que hablaron del futuro del negocio?<br />
@@ -179,7 +179,7 @@ export default function FamiliasBCPPage() {
             </h2>
 
             <p className="bcp-reveal d2" style={{ fontSize: 18, color: "#3A4A72", lineHeight: 1.74, fontFamily: "var(--font-nunito, 'Nunito', sans-serif)", marginBottom: 52 }}>
-              Esa conversación es difícil no porque no quieran tenerla — sino porque falta un punto de partida en común. Mi Familia se los da.
+              Esa conversación es difícil no porque no quieran tenerla — sino porque falta un punto de partida en común. Legado se los da.
             </p>
 
             <div className="bcp-reveal d3" style={{ textAlign: "center", padding: "10px 0 0" }}>
@@ -372,7 +372,7 @@ export default function FamiliasBCPPage() {
                 Es BCP. El banco en el<br />que <span style={{ color: "#F9B370" }}>tu familia ya confía.</span>
               </h2>
               <p className="bcp-reveal d2" style={{ fontFamily: "var(--font-nunito, 'Nunito', sans-serif)", fontSize: 17, color: "#A8C2EC", lineHeight: 1.74, marginBottom: 44 }}>
-                Con más de 130 años acompañando a familias peruanas, BCP nació de ese mismo compromiso: cuidar a los que más quieres. Mi Familia no es un trámite — es una extensión de esa confianza de siempre, pensada para este momento de tu vida.
+                Con más de 130 años acompañando a familias peruanas, BCP nació de ese mismo compromiso: cuidar a los que más quieres. Legado no es un trámite — es una extensión de esa confianza de siempre, pensada para este momento de tu vida.
               </p>
               <div className="bcp-stat-row bcp-reveal d3" style={{ display: "flex", gap: 36, alignItems: "flex-start" }}>
                 {[
@@ -402,7 +402,7 @@ export default function FamiliasBCPPage() {
                   <div style={{ width: 34, height: 34, borderRadius: 9, background: "#F07B1F", display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0 }}>
                     <svg width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true"><path d="M9 1.5L2 5.5v4c0 3.5 3 6.7 7 7.5 4-.8 7-4 7-7.5v-4L9 1.5z" stroke="white" strokeWidth="1.3" strokeLinejoin="round" fill="none" /></svg>
                   </div>
-                  <span style={{ fontFamily: "'Flexo', sans-serif", fontSize: 17, fontWeight: 700, color: "white" }}>Mi Familia</span>
+                  <span style={{ fontFamily: "'Flexo', sans-serif", fontSize: 17, fontWeight: 700, color: "white" }}>Legado</span>
                 </div>
                 <p style={{ fontFamily: "var(--font-nunito, 'Nunito', sans-serif)", fontSize: 13, color: "#7A9DC8", lineHeight: 1.55 }}>Un producto de BCP para cuidar lo que más importa</p>
               </div>
@@ -493,7 +493,7 @@ export default function FamiliasBCPPage() {
           <div style={{ maxWidth: 1120, margin: "0 auto", display: "flex", alignItems: "center", justifyContent: "space-between", flexWrap: "wrap", gap: 14 }}>
             <div style={{ display: "flex", alignItems: "center", gap: 10 }}>
               <div style={{ background: "rgba(255,255,255,0.1)", border: "1.5px solid rgba(255,255,255,0.2)", color: "white", fontFamily: "'Flexo', sans-serif", fontWeight: 700, fontSize: 11.5, padding: "4px 9px", borderRadius: 5, letterSpacing: "1.2px", lineHeight: 1 }}>BCP</div>
-              <span style={{ color: "rgba(255,255,255,0.55)", fontFamily: "var(--font-nunito, 'Nunito', sans-serif)", fontSize: 14 }}>Mi Familia · Banco de Crédito del Perú</span>
+              <span style={{ color: "rgba(255,255,255,0.55)", fontFamily: "var(--font-nunito, 'Nunito', sans-serif)", fontSize: 14 }}>Legado · Banco de Crédito del Perú</span>
             </div>
             <p style={{ fontFamily: "var(--font-nunito, 'Nunito', sans-serif)", fontSize: 12, color: "rgba(255,255,255,0.3)" }}>© 2026 Banco de Crédito del Perú. Todos los derechos reservados.</p>
           </div>

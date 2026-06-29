@@ -419,7 +419,7 @@ function ResultadoContent() {
             <div style={{ width: 38, height: 38, background: "rgba(255,255,255,0.12)", border: "1.5px solid rgba(255,255,255,0.2)", borderRadius: 10, display: "flex", alignItems: "center", justifyContent: "center" }}>
               <span style={{ fontFamily: "'Flexo',sans-serif", fontSize: 13, fontWeight: 700, color: "white", letterSpacing: "1px" }}>BCP</span>
             </div>
-            <span style={{ fontFamily: "'Flexo',sans-serif", fontSize: 16, fontWeight: 700, color: "white" }}>Mi Familia</span>
+            <span style={{ fontFamily: "'Flexo',sans-serif", fontSize: 16, fontWeight: 700, color: "white" }}>Legado</span>
           </div>
 
           {/* Nav */}
@@ -1056,7 +1056,7 @@ function ResultadoContent() {
                   const name = businessNameDraft.trim();
                   if (verifyBanco === "bcp") {
                     setVerifyOpen(false);
-                    router.push(`/proyectos/familias-bcp/onboarding/bcp-login?businessName=${encodeURIComponent(name)}&relacion=${encodeURIComponent(verifyRelacion ?? "")}`);
+                    router.push(`/proyectos/legado/onboarding/bcp-login?businessName=${encodeURIComponent(name)}&relacion=${encodeURIComponent(verifyRelacion ?? "")}`);
                   } else {
                     setBusinessName(name); setVerified(true); setVerifyOpen(false);
                   }

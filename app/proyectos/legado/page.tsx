@@ -1,5 +1,5 @@
 import { Nunito } from "next/font/google";
-import FamiliasBCPPage from "./FamiliasBCPPage";
+import FamiliasBCPPage from "./LegadoPage";
 
 const nunito = Nunito({
   subsets: ["latin"],
@@ -9,7 +9,7 @@ const nunito = Nunito({
 });
 
 export const metadata = {
-  title: "Mi Familia — BCP",
+  title: "Legado — BCP",
   description: "Ayuda a crecer lo que construyeron para ti.",
 };
 

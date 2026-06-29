@@ -59,7 +59,7 @@ function BcpLoginContent() {
     const t2 = setTimeout(() => setChecked(2), 1500);
     const t3 = setTimeout(() => {
       router.replace(
-        `/proyectos/familias-bcp/onboarding/resultado?verified=true&businessName=${encodeURIComponent(businessName)}&relacion=${encodeURIComponent(relacion)}`
+        `/proyectos/legado/onboarding/resultado?verified=true&businessName=${encodeURIComponent(businessName)}&relacion=${encodeURIComponent(relacion)}`
       );
     }, 2400);
     return () => { clearTimeout(t1); clearTimeout(t2); clearTimeout(t3); };
@@ -86,7 +86,7 @@ function BcpLoginContent() {
           <div style={{ background: "rgba(255,255,255,0.12)", border: "1.5px solid rgba(255,255,255,0.2)", borderRadius: 14, padding: "10px 22px" }}>
             <span style={{ fontFamily: "'Flexo',sans-serif", fontSize: 24, fontWeight: 700, color: "white", letterSpacing: "3px" }}>BCP</span>
           </div>
-          <span style={{ fontFamily: "'Flexo',sans-serif", fontSize: 16, fontWeight: 600, color: "rgba(255,255,255,0.7)" }}>Mi Familia</span>
+          <span style={{ fontFamily: "'Flexo',sans-serif", fontSize: 16, fontWeight: 600, color: "rgba(255,255,255,0.7)" }}>Legado</span>
         </div>
 
         <div style={{ background: "white", borderRadius: 24, padding: "36px 32px 40px", width: "100%", maxWidth: 400, boxShadow: "0 32px 80px rgba(0,0,0,0.4)" }}>

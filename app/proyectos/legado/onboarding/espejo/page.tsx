@@ -81,7 +81,7 @@ export default function EspejoPage() {
         {/* Pricing bottom sheet — in flow, not fixed */}
         <div className="bcp-px" style={{ background: "white", borderRadius: "24px 24px 0 0", padding: "28px 20px 40px", boxShadow: "0 -8px 40px rgba(0,26,96,0.12)", flexShrink: 0 }}>
           <h2 style={{ fontFamily: "'Flexo', sans-serif", fontSize: 20, fontWeight: 700, color: "#1A2240", textAlign: "center", marginBottom: 20 }}>
-            Activa Mi Familia para ver todo
+            Activa Legado para ver todo
           </h2>
 
           {/* Plan cards */}
@@ -98,7 +98,7 @@ export default function EspejoPage() {
               <div style={{ position: "absolute", top: -12, left: "50%", transform: "translateX(-50%)", background: "#F07B1F", borderRadius: 20, padding: "3px 10px", whiteSpace: "nowrap" }}>
                 <span style={{ fontSize: 9.5, fontWeight: 800, color: "white", letterSpacing: "1px" }}>RECOMENDADO</span>
               </div>
-              <p style={{ fontFamily: "'Flexo', sans-serif", fontSize: 14, fontWeight: 700, color: "#F07B1F" }}>Mi Familia Plus</p>
+              <p style={{ fontFamily: "'Flexo', sans-serif", fontSize: 14, fontWeight: 700, color: "#F07B1F" }}>Legado Plus</p>
               <p style={{ fontFamily: "'Flexo', sans-serif", fontSize: 16, fontWeight: 700, color: "#1A2240" }}>S/ 15 / mes</p>
               {["Espejo completo — 6 meses", "Metas desbloqueables", "Asesor familiar BCP"].map((f) => (
                 <p key={f} style={{ fontSize: 12, color: "#5A6A92", lineHeight: 1.5 }}>{f}</p>
@@ -107,10 +107,10 @@ export default function EspejoPage() {
           </div>
 
           <button
-            onClick={() => router.push("/proyectos/familias-bcp")}
+            onClick={() => router.push("/proyectos/legado")}
             style={{ width: "100%", background: "#F07B1F", color: "white", border: "none", borderRadius: 16, padding: "18px", fontFamily: "var(--font-nunito, 'Nunito', sans-serif)", fontSize: 17, fontWeight: 800, cursor: "pointer", boxShadow: "0 8px 24px rgba(240,123,31,0.3)", marginBottom: 12 }}
           >
-            Activar Mi Familia Plus
+            Activar Legado Plus
           </button>
           <p style={{ textAlign: "center", fontSize: 12, color: "#C8D2E6" }}>Cancela cuando quieras · Sin permanencia</p>
         </div>
