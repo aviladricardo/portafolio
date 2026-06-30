@@ -177,8 +177,8 @@ export default function FamiliasBCPPage() {
             <p className="bcp-reveal" style={{ fontFamily: "var(--font-nunito, 'Nunito', sans-serif)", fontSize: 11.5, fontWeight: 700, letterSpacing: "2.8px", textTransform: "uppercase", color: "#F07B1F", marginBottom: 16 }}>Lo que cambia con Legado</p>
 
             <h2 className="bcp-s-h2 bcp-reveal d1" style={{ fontFamily: "'Flexo', sans-serif", fontSize: 36, fontWeight: 700, color: "#1A2240", lineHeight: 1.28, marginBottom: 28 }}>
-              ¿Llevas años sin saber<br />cómo funciona el negocio familiar?<br />
-              <span style={{ color: "#003DA5" }}>Tranquilo.<br />Legado es la solución.</span>
+              ¿Aún sin saber<br />cómo funciona el negocio familiar?<br />
+              <span style={{ color: "#003DA5" }}>Legado es la solución.</span>
             </h2>
 
             <p className="bcp-reveal d2" style={{ fontSize: 18, color: "#3A4A72", lineHeight: 1.74, fontFamily: "var(--font-nunito, 'Nunito', sans-serif)", marginBottom: 52 }}>
