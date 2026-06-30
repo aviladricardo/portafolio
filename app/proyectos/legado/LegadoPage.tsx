@@ -73,6 +73,9 @@ export default function FamiliasBCPPage() {
         @keyframes bcp-pulse-dot { 0%, 100% { opacity: 0.55; transform: scale(1); } 50% { opacity: 1; transform: scale(1.25); } }
         .bcp-pulse { animation: bcp-pulse-dot 2.6s ease infinite; }
         .bcp-nav-cta:hover { background: #D96C10 !important; box-shadow: 0 6px 22px rgba(240,123,31,0.55) !important; }
+        @keyframes tweet-scroll { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+        .bcp-tweet-track { display: flex; gap: 16px; width: max-content; animation: tweet-scroll 18s linear infinite; }
+        .bcp-tweet-track:hover { animation-play-state: paused; }
         .bcp-hero-cta:hover { background: #D96C10 !important; transform: translateY(-2px); box-shadow: 0 14px 40px rgba(240,123,31,0.56) !important; }
         .bcp-final-cta:hover { background: #D96C10 !important; transform: translateY(-3px); box-shadow: 0 18px 50px rgba(240,123,31,0.52) !important; }
         .bcp-hero-mobile-img-wrap { display: none; }
@@ -82,8 +85,8 @@ export default function FamiliasBCPPage() {
           .bcp-hero-wave { display: none !important; }
           .bcp-hero-section { min-height: 0 !important; height: calc(100vh - 64px); height: calc(100svh - 64px); }
           .bcp-hero-text { padding: 40px 0 28px !important; }
-          .bcp-hero-outer { padding-left: 20px !important; padding-right: 20px !important; align-items: flex-start !important; flex: 0 0 auto !important; }
-          .bcp-hero-mobile-img-wrap { flex: 1; min-height: 0; overflow: hidden; }
+          .bcp-hero-outer { padding-left: 20px !important; padding-right: 20px !important; align-items: flex-start !important; flex: 0 0 auto !important; position: relative !important; z-index: 2 !important; }
+          .bcp-hero-mobile-img-wrap { position: absolute !important; bottom: 0 !important; left: 0 !important; right: 0 !important; flex: none !important; z-index: 1; }
           .bcp-h1-hero { font-size: 30px !important; line-height: 1.22 !important; }
           .bcp-steps-row { flex-direction: column !important; align-items: center !important; gap: 32px !important; }
           .bcp-step-item { width: 100% !important; max-width: 320px !important; }
@@ -95,7 +98,7 @@ export default function FamiliasBCPPage() {
           .bcp-trust-h2 { font-size: 28px !important; }
         }
         @media (max-width: 480px) {
-          .bcp-h1-hero { font-size: 26px !important; }
+          .bcp-h1-hero { font-size: 30px !important; }
           .bcp-s-h2 { font-size: 23px !important; }
           .bcp-hero-badge-row { flex-direction: column !important; gap: 10px !important; }
           .bcp-stat-row { flex-wrap: wrap !important; }
@@ -158,7 +161,7 @@ export default function FamiliasBCPPage() {
           {/* Mobile image */}
           <div className="bcp-hero-mobile-img-wrap" style={{ width: "100%", lineHeight: 0 }}>
             {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src="/hero_mobile.png" alt="" style={{ display: "block", width: "100%", height: "100%", objectFit: "cover", objectPosition: "center bottom" }} />
+            <img src="/hero_mobile.png" alt="" style={{ display: "block", width: "100%", height: "auto" }} />
           </div>
 
           <div className="bcp-hero-wave" style={{ overflow: "hidden", height: 58, position: "relative", zIndex: 3, marginTop: -1 }}>
@@ -174,18 +177,56 @@ export default function FamiliasBCPPage() {
             <p className="bcp-reveal" style={{ fontFamily: "var(--font-nunito, 'Nunito', sans-serif)", fontSize: 11.5, fontWeight: 700, letterSpacing: "2.8px", textTransform: "uppercase", color: "#F07B1F", marginBottom: 16 }}>Lo que cambia con Legado</p>
 
             <h2 className="bcp-s-h2 bcp-reveal d1" style={{ fontFamily: "'Flexo', sans-serif", fontSize: 36, fontWeight: 700, color: "#1A2240", lineHeight: 1.28, marginBottom: 28 }}>
-              ¿Cuándo fue la última vez<br />que hablaron del futuro del negocio?<br />
-              <span style={{ color: "#003DA5" }}>Esa conversación ahora tiene<br />un punto de partida.</span>
+              ¿Llevas años sin saber<br />cómo funciona el negocio familiar?<br />
+              <span style={{ color: "#003DA5" }}>Tranquilo.<br />Legado es la solución.</span>
             </h2>
 
             <p className="bcp-reveal d2" style={{ fontSize: 18, color: "#3A4A72", lineHeight: 1.74, fontFamily: "var(--font-nunito, 'Nunito', sans-serif)", marginBottom: 52 }}>
-              Esa conversación es difícil no porque no quieran tenerla — sino porque falta un punto de partida en común. Legado se los da.
+              LEGADO es la herramienta que te ayuda a entender el negocio de tu papá y te empuja a hacerlo crecer.
             </p>
 
-            <div className="bcp-reveal d3" style={{ textAlign: "center", padding: "10px 0 0" }}>
-              <p style={{ fontFamily: "'Flexo', sans-serif", fontSize: 22, fontWeight: 600, color: "#1A2240", lineHeight: 1.55 }}>
-                &ldquo;Ellos ven su negocio claro por primera vez.<br />Tú los acompañas. BCP hace el resto.&rdquo;
-              </p>
+            {/* Tweet carousel */}
+            <div className="bcp-reveal d3" style={{ marginTop: 8, overflow: "hidden", marginLeft: -24, marginRight: -24 }}>
+              <div className="bcp-tweet-track">
+                {[
+                  { initial: "N", grad: "linear-gradient(135deg,#003DA5,#F07B1F)", name: "Nicolás A.", handle: "@nico_avila", text: '15 años sin saber cómo gana papá. 5 minutos con Legado y todo cambió. No fue "debes formalizarte". Fue "mira esto". Y él vio.', tags: "#Legado #MiPapá", time: "9:41 AM · 28 jun 2025", views: "2.4K", stats: ["847","1.2K","312"] },
+                  { initial: "V", grad: "linear-gradient(135deg,#7C3AED,#F07B1F)", name: "Valeria M.", handle: "@vale_mendo", text: "Descargué esto para ayudar a mi mamá. Me ayudó primero a entender que no sé nada de su negocio. Ahora sé. Y ella también.", tags: "#Legado #MiMamá", time: "11:23 AM · 14 jun 2025", views: "5.1K", stats: ["1.4K","2.8K","891"] },
+                  { initial: "C", grad: "linear-gradient(135deg,#059669,#003DA5)", name: "Carlos R.", handle: "@carlos_r_pe", text: "Mi viejo tiene 30 años de negocio y nunca supo cuánto ganaba exactamente. Legado le mostró el número. Se quedó callado 3 minutos.", tags: "#Legado #NegocioFamiliar", time: "3:17 PM · 2 jun 2025", views: "8.9K", stats: ["2.1K","4.3K","1.6K"] },
+                ].concat([
+                  { initial: "N", grad: "linear-gradient(135deg,#003DA5,#F07B1F)", name: "Nicolás A.", handle: "@nico_avila", text: '15 años sin saber cómo gana papá. 5 minutos con Legado y todo cambió. No fue "debes formalizarte". Fue "mira esto". Y él vio.', tags: "#Legado #MiPapá", time: "9:41 AM · 28 jun 2025", views: "2.4K", stats: ["847","1.2K","312"] },
+                  { initial: "V", grad: "linear-gradient(135deg,#7C3AED,#F07B1F)", name: "Valeria M.", handle: "@vale_mendo", text: "Descargué esto para ayudar a mi mamá. Me ayudó primero a entender que no sé nada de su negocio. Ahora sé. Y ella también.", tags: "#Legado #MiMamá", time: "11:23 AM · 14 jun 2025", views: "5.1K", stats: ["1.4K","2.8K","891"] },
+                  { initial: "C", grad: "linear-gradient(135deg,#059669,#003DA5)", name: "Carlos R.", handle: "@carlos_r_pe", text: "Mi viejo tiene 30 años de negocio y nunca supo cuánto ganaba exactamente. Legado le mostró el número. Se quedó callado 3 minutos.", tags: "#Legado #NegocioFamiliar", time: "3:17 PM · 2 jun 2025", views: "8.9K", stats: ["2.1K","4.3K","1.6K"] },
+                ]).map((t, i) => (
+                  <div key={i} style={{ width: 360, flexShrink: 0, background: "white", border: "1px solid #E2E8F0", borderRadius: 16, padding: "20px 20px 16px", boxShadow: "0 2px 12px rgba(0,26,96,0.07)" }}>
+                    <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", marginBottom: 12 }}>
+                      <div style={{ display: "flex", alignItems: "center", gap: 10 }}>
+                        <div style={{ width: 40, height: 40, borderRadius: "50%", background: t.grad, display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0 }}>
+                          <span style={{ fontSize: 15, fontWeight: 800, color: "white", fontFamily: "var(--font-nunito,'Nunito',sans-serif)" }}>{t.initial}</span>
+                        </div>
+                        <div>
+                          <p style={{ fontSize: 14, fontWeight: 700, color: "#0F1419", margin: 0, fontFamily: "var(--font-nunito,'Nunito',sans-serif)" }}>{t.name}</p>
+                          <p style={{ fontSize: 13, color: "#536471", margin: 0, fontFamily: "var(--font-nunito,'Nunito',sans-serif)" }}>{t.handle}</p>
+                        </div>
+                      </div>
+                      <svg width="18" height="18" viewBox="0 0 24 24" fill="#0F1419" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.748l7.73-8.835L1.254 2.25H8.08l4.253 5.622zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+                    </div>
+                    <p style={{ fontSize: 14.5, color: "#0F1419", lineHeight: 1.6, margin: "0 0 10px", fontFamily: "var(--font-nunito,'Nunito',sans-serif)" }}>{t.text}</p>
+                    <p style={{ fontSize: 14, color: "#003DA5", margin: "0 0 12px", fontFamily: "var(--font-nunito,'Nunito',sans-serif)", fontWeight: 600 }}>{t.tags}</p>
+                    <p style={{ fontSize: 12.5, color: "#536471", margin: "0 0 10px", fontFamily: "var(--font-nunito,'Nunito',sans-serif)" }}>{t.time} · <span style={{ fontWeight: 700, color: "#0F1419" }}>{t.views}</span> views</p>
+                    <div style={{ borderTop: "1px solid #EFF3F4", paddingTop: 10, display: "flex", gap: 20 }}>
+                      {[
+                        { icon: <svg width="15" height="15" viewBox="0 0 24 24" fill="none"><path d="M1.751 10c0-4.42 3.584-8 8.005-8h4.366c4.49 0 7.879 3.77 7.879 8.05 0 4.42-3.58 8.05-8 8.05h-4c-4.419 0-8.25-3.63-8.25-8.1zm8.005-6c-3.317 0-6.005 2.69-6.005 6 0 3.37 2.77 6.1 6.25 6.1h4c3.311 0 6-2.68 6-6.05 0-3.32-2.663-6.05-5.879-6.05H9.756z" fill="#536471"/><path d="M6 14.5c0 .83.672 1.5 1.5 1.5h9c.828 0 1.5-.67 1.5-1.5S17.328 13 16.5 13h-9C6.672 13 6 13.67 6 14.5z" fill="#536471"/></svg>, count: t.stats[0] },
+                        { icon: <svg width="15" height="15" viewBox="0 0 24 24" fill="none"><path d="M4.75 3.79l4.603 4.3-1.706 1.82L6 8.38v7.37c0 .97.784 1.75 1.75 1.75H13V19.5H7.75C5.681 19.5 4 17.819 4 15.75V8.38L2.353 9.91.647 8.09l4.103-3.3zm11.5 2.71H11V4h5.25c2.07 0 3.75 1.68 3.75 3.75v7.37l1.647-1.53 1.706 1.82-4.103 3.3-4.603-4.3 1.706-1.82L18 13.62V6.25c0-.97-.784-1.75-1.75-1.75z" fill="#536471"/></svg>, count: t.stats[1] },
+                        { icon: <svg width="15" height="15" viewBox="0 0 24 24" fill="none"><path d="M16.697 5.5c-1.222-.06-2.679.51-3.89 2.16l-.805 1.09-.806-1.09C9.984 6.01 8.526 5.44 7.304 5.5c-1.243.07-2.349.78-2.91 1.91-.552 1.12-.633 2.78.479 4.82 1.074 1.97 3.257 4.27 7.129 6.61 3.87-2.34 6.052-4.64 7.126-6.61 1.111-2.04 1.03-3.7.477-4.82-.561-1.13-1.666-1.84-2.908-1.91zm4.187 7.69c-1.351 2.48-4.001 5.12-8.379 7.67l-.503.3-.504-.3c-4.379-2.55-7.029-5.19-8.382-7.67-1.36-2.5-1.41-4.86-.514-6.67.887-1.79 2.647-2.91 4.601-3.01 1.651-.09 3.368.56 4.798 2.01 1.429-1.45 3.146-2.1 4.796-2.01 1.954.1 3.714 1.22 4.601 3.01.896 1.81.846 4.17-.514 6.67z" fill="#536471"/></svg>, count: t.stats[2] },
+                      ].map(({ icon, count }, j) => (
+                        <div key={j} style={{ display: "flex", alignItems: "center", gap: 5, color: "#536471", fontFamily: "var(--font-nunito,'Nunito',sans-serif)", fontSize: 12.5 }}>
+                          {icon}{count}
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                ))}
+              </div>
             </div>
 
             <div className="bcp-steps-row bcp-reveal d4" style={{ display: "flex", alignItems: "flex-start", gap: 0, marginTop: 52, paddingTop: 44, borderTop: "1px solid rgba(0,61,165,0.08)" }}>
@@ -313,7 +354,7 @@ export default function FamiliasBCPPage() {
                     "Ven su negocio claro, por primera vez, sin juicios.",
                     "Saben que lo comparten solo contigo y con nadie más.",
                     "Ya no están solos — pero tampoco presionados.",
-                    "Acceden a oportunidades reales, a su ritmo.",
+                    "Acceden a créditos y ofertas especiales respaldados por ti.",
                   ].map((text) => (
                     <li key={text} style={{ display: "flex", alignItems: "flex-start", gap: 13 }}>
                       <div style={{ width: 22, height: 22, borderRadius: "50%", background: "rgba(240,123,31,0.22)", border: "1.5px solid rgba(240,123,31,0.48)", display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0, marginTop: 2 }}>
@@ -404,7 +445,7 @@ export default function FamiliasBCPPage() {
                   </div>
                   <span style={{ fontFamily: "'Flexo', sans-serif", fontSize: 17, fontWeight: 700, color: "white" }}>Legado</span>
                 </div>
-                <p style={{ fontFamily: "var(--font-nunito, 'Nunito', sans-serif)", fontSize: 13, color: "#7A9DC8", lineHeight: 1.55 }}>Un producto de BCP para cuidar lo que más importa</p>
+                <p style={{ fontFamily: "var(--font-nunito, 'Nunito', sans-serif)", fontSize: 13, color: "#7A9DC8", lineHeight: 1.55 }}>Un producto de BCP para cuidar el sostén de tu familia</p>
               </div>
               <div style={{ display: "flex", alignItems: "center", gap: 8 }}>
                 <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M7 1L1.5 4v3.5c0 2.8 2.3 5.2 5.5 5.9 3.2-.7 5.5-3.1 5.5-5.9V4L7 1z" stroke="#7A9DC8" strokeWidth="1.2" strokeLinejoin="round" fill="none" /></svg>
@@ -423,7 +464,7 @@ export default function FamiliasBCPPage() {
             </div>
             <h2 className="bcp-s-h2 bcp-reveal d1" style={{ fontFamily: "'Flexo', sans-serif", fontSize: 42, fontWeight: 700, color: "#1A2240", lineHeight: 1.22, marginBottom: 20 }}>Da el primer paso hoy.</h2>
             <p className="bcp-reveal d2" style={{ fontFamily: "var(--font-nunito, 'Nunito', sans-serif)", fontSize: 18, color: "#5A6A92", lineHeight: 1.74, marginBottom: 44 }}>
-              Tu papá merece un futuro tranquilo. Tú puedes ayudarlo a construirlo — sin presionarlo, sin invadir su espacio. Empieza gratis y ve hasta dónde pueden llegar juntos.
+              Ellos merecen un futuro tranquilo. Ahora ayudarlos es mucho más fácil. Empieza gratis y ve hasta dónde pueden llegar juntos.
             </p>
             <div className="bcp-reveal d3">
               <a href="#" onClick={openModal} className="bcp-final-cta" style={{ display: "inline-flex", alignItems: "center", gap: 10, background: "#F07B1F", color: "white", fontFamily: "var(--font-nunito, 'Nunito', sans-serif)", fontSize: 19, fontWeight: 800, padding: "18px 46px", borderRadius: 14, textDecoration: "none", boxShadow: "0 12px 38px rgba(240,123,31,0.42)", letterSpacing: "0.3px", transition: "background 0.2s, box-shadow 0.2s, transform 0.2s" }}>
@@ -431,7 +472,7 @@ export default function FamiliasBCPPage() {
                 <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M4 10h12M10 4l6 6-6 6" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" /></svg>
               </a>
             </div>
-            <p className="bcp-reveal d4" style={{ fontFamily: "var(--font-nunito, 'Nunito', sans-serif)", fontSize: 13, color: "#8A9DC0", marginTop: 20, letterSpacing: "0.3px" }}>Disponible en iOS y Android · Sin costo · Sin compromisos</p>
+            <p className="bcp-reveal d4" style={{ fontFamily: "var(--font-nunito, 'Nunito', sans-serif)", fontSize: 13, color: "#8A9DC0", marginTop: 20, letterSpacing: "0.3px" }}>Sin costo · Sin compromisos</p>
           </div>
         </section>
 
